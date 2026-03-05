@@ -5,5 +5,11 @@
       "src": "api/**/*.js",
       "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    {
+      "src": "/api/v2/(.*)",
+      "dest": "/api/proxy?path=$1"
+    }
   ]
 }
