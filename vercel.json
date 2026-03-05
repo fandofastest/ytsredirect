@@ -19,6 +19,10 @@
       "dest": "/api/proxy.js?path=$1"
     },
     {
+      "src": "/movie/([^/]+)$",
+      "dest": "/api/movie.js?imdbid=$1"
+    },
+    {
       "src": "/(.*)",
       "status": 404
     }
