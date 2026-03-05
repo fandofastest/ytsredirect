@@ -1,0 +1,9 @@
+{
+  "name": "ytsredirect",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Vercel proxy for YTS API",
+  "engines": {
+    "node": ">=18"
+  }
+}
