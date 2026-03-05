@@ -6,10 +6,21 @@
       "use": "@vercel/node"
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/v2/:path*",
-      "destination": "/api/proxy?path=:path*"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/api/proxy$",
+      "dest": "/api/proxy.js"
+    },
+    {
+      "src": "/api/v2/(.*)",
+      "dest": "/api/proxy.js?path=$1"
+    },
+    {
+      "src": "/(.*)",
+      "status": 404
     }
   ]
 }
